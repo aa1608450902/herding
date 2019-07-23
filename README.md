@@ -27,3 +27,17 @@ To solve various problems by creating distributed/cluster application and explor
 ## stream data processing
 
 Such as kafka, storm, flink.
+
+## Container Tech
+
+---
+
+### docker
+
+Refer to namespace, cgroup of linux.
+
+## Concurrent computing
+
+---
+
+### MPI, openMP
