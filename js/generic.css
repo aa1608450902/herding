@@ -1,0 +1,10 @@
+.svg-hover:hover {
+    fill: lightskyblue;
+}
+
+@font-face {
+    font-family: 'sketchica';
+    src: url("Sketchica-MB4Y.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}

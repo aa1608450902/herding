@@ -1,12 +1,8 @@
 # herding
 
----
-
 To solve various problems by creating distributed/cluster application and explore the possibilities of the cluster.
 
 ## Base
-
----
 
 ### zookeeper
 
@@ -18,8 +14,6 @@ To solve various problems by creating distributed/cluster application and explor
 
 ## Distributed computing
 
----
-
 ### spark
 
 **Definition:** Apache Spark is a unified analytics engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.
@@ -30,14 +24,10 @@ Such as kafka, storm, flink.
 
 ## Container Tech
 
----
-
 ### docker
 
 Refer to namespace, cgroup of linux.
 
 ## Concurrent computing
-
----
 
 ### MPI, openMP

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Json View</title>
+    <script src="JsonView.js"></script>
+    <script src="herding/js/ajax.js"></script>
+    <link rel="stylesheet" href="generic.css">
+</head>
+<body>
+    <div style="width: 100%; display: flex; justify-content: center; margin-top: 50px;">
+        <div id="app" style="width: 400px; height: 380px;">
+        </div>
+    </div>
+
+    <div id="app2" style="width: 100%; display: flex; justify-content: center; margin-top: 50px;">
+    </div>
+  <script>
+      ajax.get('channel/measure', resp => {
+        JsonView.parse('app', JSON.parse(resp));
+      });
+      let svg = $SvgView('svg');
+      $get('app2').appendChild(svg);
+      svg.id = 'app2svg';
+      Style(svg, {
+          width: '400px',
+          height: '380px',
+      });
+      let proto = {
+          "ViewType": "AbsoluteLayout",
+          "children": [
+              {
+                  "ViewType": "View",
+                  "x": "0px",
+                  "y": "0px",
+                  "width": "400px",
+                  "height": "380px",
+                  "BackgroundColor": '#FFFFFF',
+                  "border": "0.5px solid rgb(0,0,0)",
+              },
+              {
+                  "ViewType": "TextView",
+                  "x": "5px",
+                  'y': "15px",
+                  "radius": "5px",
+                  "text": "Pet",
+                  "color": "#333333",
+                  "width": "50px",
+                  "height": "30px",
+                  "AlignHorizontal": "center",
+                  "FontFamily": "Times New Roman",
+                  "FontSize": 28,
+              },
+              {
+                  "ViewType": "ImageView",
+                  "x": "0px",
+                  "y": "40px",
+                  "width": "400px",
+                  "height": "260px",
+                  "source": "img/dog.jpg",
+              },
+              {
+                  "ViewType": "TextView",
+                  "x": "100px",
+                  'y': "120px",
+                  "radius": "5px",
+                  "text": "Beagle",
+                  "color": "#FFFFFF",
+                  "width": "200px",
+                  "height": "100px",
+                  "AlignHorizontal": "center",
+                  "FontFamily": "Times New Roman",
+                  "FontSize": 28,
+              },
+              {
+                  "ViewType": "ImageView",
+                  "x": `${400-5-30}px`,
+                  "y": "15px",
+                  "width": "30px",
+                  "height": "30px",
+                  "source": "img/light.png",
+                  "click": "fn_light",
+              },
+              {
+                  "ViewType": "ImageView",
+                  "x": `${5}px`,
+                  "y": `${300 - 5}px`,
+                  "width": "30px",
+                  "height": "30px",
+                  "source": "img/map.png",
+                  "click": "getMap",
+              },
+              {
+                  "ViewType": "ImageView",
+                  "x": `${400-5-30}px`,
+                  "y": `${300 - 5}px`,
+                  "width": "30px",
+                  "height": "30px",
+                  "source": "img/heart.png",
+                  "click": "fn_heart",
+              },
+              {
+                  "ViewType": "TextView",
+                  "x": "5px",
+                  'y': `${300 + 30}px`,
+                  "text": "Lovely little dog. We plan to adopt one.",
+                  "color": "#333333",
+                  "width": `${400-10}px`,
+                  "height": "40px",
+                  "AlignHorizontal": "start",
+                  "AlignVertical": "center",
+                  "FontFamily": "Times New Roman",
+                  "FontSize": 18,
+              },
+          ]
+      };
+      JsonViewSvg.parse('app2svg', proto);
+
+  </script>
+
+</body>
+</html>
